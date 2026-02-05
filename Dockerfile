@@ -1,17 +1,16 @@
-# Use official OpenJDK image
 FROM eclipse-temurin:17-jdk-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy project files
+# Copy all files
 COPY . .
 
-# Build the application
+# Give permission to Maven wrapper
+RUN chmod +x mvnw
+
+# Build the project
 RUN ./mvnw clean package -DskipTests
 
-# Expose port
 EXPOSE 8080
 
-# Run the jar
 CMD ["java", "-jar", "target/itemapi-0.0.1-SNAPSHOT.jar"]
