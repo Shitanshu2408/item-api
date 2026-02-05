@@ -58,4 +58,5 @@ GET /items/1
 - This project is for demonstration purposes.
 
 ## Deployment
-This application can be deployed to Render, Railway, or Fly.io for public access.
+Deployed on Render.
+Check the Description for the link.
